@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  password: String!
+}
+
+type Task {
+  id: ID!
+  title: String!
+  description: String
+  status: String!
+  priority: String!
+  assignedTo: User
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  tasks(page: Int! = 1, limit: Int! = 10, status: String, priority: String): [Task!]!
+  task(id: String!): Task!
+}
+
+type Mutation {
+  createTask(createTaskInput: CreateTaskInput!): Task!
+  updateTask(updateTaskInput: UpdateTaskInput!): Task!
+  removeTask(id: String!): Task!
+}
+
+input CreateTaskInput {
+  title: String!
+  description: String
+  status: String! = "pending"
+  priority: String! = "medium"
+  assignedTo: String
+}
+
+input UpdateTaskInput {
+  id: ID!
+  title: String
+  description: String
+  status: String
+  priority: String
+  assignedTo: String
+}

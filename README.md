@@ -9,8 +9,6 @@ This is a Task Management API built with **NestJS**, **MongoDB**, and **GraphQL*
 - [Environment Variables](#environment-variables)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
-  - [Task Queries](#task-queries)
-  - [Task Mutations](#task-mutations)
 - [Testing](#testing)
 - [License](#license)
 
